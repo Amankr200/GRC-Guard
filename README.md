@@ -29,8 +29,8 @@ A premium Risk Management platform built with the MERN stack, designed to help o
 - **Industry Context**: Categorize vendors by industry (Tech, Finance, etc.).
 
 ## 🛠 Tech Stack
-- **Frontend**: React (Vite), Framer Motion (Animations), Recharts (Data Viz), Lucide React (Icons).
-- **Backend**: Node.js, Express.
+- **Frontend**: React (Vite), Framer Motion (Animations), Recharts (Data Viz), Lucide React (Icons), Axios.
+- **Backend**: Node.js, Express, JSON Web Tokens (JWT), bcryptjs, multer.
 - **Database**: MongoDB (Mongoose) with an **automatic in-memory fallback** for demonstration environments.
 - **Styling**: Vanilla CSS with a customized **Glassmorphic Design System**.
 
@@ -57,5 +57,34 @@ The platform uses a weighted scoring system:
    npm run dev
    ```
    Open [http://localhost:5173](http://localhost:5173) (or the port shown in terminal).
+
+## ⚙️ Environment Variables
+
+### Backend (`/backend/.env`)
+Create a `.env` file in the `backend` folder with the following keys:
+```env
+PORT=5000
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/grc_guard
+JWT_SECRET=super_secret_key_here
+```
+
+### Frontend (`/frontend/.env`)
+Create a `.env` file in the `frontend` folder with the backend URL (only needed if backend is hosted elsewhere):
+```env
+VITE_API_URL=http://localhost:5000
+```
+
+## 🌍 Deployment
+
+### Deploy Backend (Render)
+1. Set Root Directory to `backend`
+2. Build Command: `npm install`
+3. Start Command: `node server.js`
+4. Add Environment Variables (`MONGODB_URI`, `PORT`, `JWT_SECRET`)
+
+### Deploy Frontend (Vercel)
+1. Set Root Directory to `frontend`
+2. Framework Preset: `Vite`
+3. Add Environment Variable: `VITE_API_URL` (Set this to your Render backend URL)
 
 # GRC-Guard

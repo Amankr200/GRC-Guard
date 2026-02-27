@@ -57,3 +57,5 @@ The platform uses a weighted scoring system:
    npm run dev
    ```
    Open [http://localhost:5173](http://localhost:5173) (or the port shown in terminal).
+
+# GRC-Guard

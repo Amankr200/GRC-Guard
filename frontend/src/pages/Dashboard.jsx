@@ -15,8 +15,8 @@ const Dashboard = () => {
     const fetchData = async () => {
         try {
             const [statsRes, vendorsRes] = await Promise.all([
-                axios.get('http://localhost:5000/api/stats'),
-                axios.get('http://localhost:5000/api/vendors')
+                axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/stats`),
+                axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/vendors`)
             ]);
             setStats(statsRes.data);
             setVendors(vendorsRes.data.slice(0, 5));

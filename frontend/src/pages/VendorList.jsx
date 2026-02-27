@@ -13,7 +13,7 @@ const VendorList = () => {
 
     const fetchVendors = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/vendors');
+            const res = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/vendors`);
             setVendors(res.data);
         } catch (err) {
             console.error("Error fetching vendors", err);
@@ -22,7 +22,7 @@ const VendorList = () => {
 
     const deleteVendor = async (id) => {
         if (window.confirm("Are you sure you want to remove this vendor?")) {
-            await axios.delete(`http://localhost:5000/api/vendors/${id}`);
+            await axios.delete(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/vendors/${id}`);
             fetchVendors();
         }
     };

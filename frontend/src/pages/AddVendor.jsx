@@ -22,7 +22,7 @@ const AddVendor = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/api/vendors', formData);
+            await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/vendors`, formData);
             navigate('/vendors');
         } catch (err) {
             console.error("Error adding vendor", err);
